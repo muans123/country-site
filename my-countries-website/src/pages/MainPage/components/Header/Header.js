@@ -10,10 +10,10 @@ export const Header = () => {
                         <img src={image}></img>
                     </div>
                     <div className='header-nav'>
-                        <div>Главная</div>
-                        <div>Страны</div>
-                        <div>О нас</div>
-                        <div>Контакты</div>
+                        <div type='button'>Главная</div>
+                        <div type='button'>Страны</div>
+                        <div type='button'>О нас</div>
+                        <div type='button'>Контакты</div>
                     </div>
                     <div className='header-name'>
                         <h2>Country Explorer</h2>
