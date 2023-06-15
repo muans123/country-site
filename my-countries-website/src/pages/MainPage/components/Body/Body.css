@@ -1,23 +1,55 @@
 .body-background {
   background-image: url("earth.jpg");
+  background-position: 500px;
+  background-repeat: no-repeat;
+  min-height: 89vh;
+  background-color: #000;
 }
 
 .body {
+  display: flex;
+  align-items: center;
   width: 80%;
   margin: 0 auto;
   font-family: "Roboto";
+  height: 89vh;
 }
 
 .body-content {
   text-align: left;
-  display: flex;
-  align-items: center;
-  height: 350px;
+  width: 70%;
 }
 .body-content div {
   font-style: normal;
   font-weight: 700;
-  font-size: 36px;
+  font-size: 40px;
   line-height: 140%;
-  color: #FFFFFF;
+  color: #fff;
+}
+.body-content .content-subtitle div {
+  margin-top: 10px;
+  font-size: 28px;
+}
+.body-content .content-subtitle div a {
+  cursor: pointer;
+  text-decoration: none;
+}
+.body-content .content-subtitle div .HTML {
+  color: orange;
+}
+.body-content .content-subtitle div .CSS {
+  color: blue;
+}
+.body-content .content-subtitle div .JS {
+  color: yellow;
+}
+.body-content .content-subtitle div .SASS {
+  color: #cc24b0;
+}
+.body-content .content-subtitle div .REACT {
+  color: lightblue;
+}
+.body-content .content-subtitle .subtitle-nav {
+  margin-top: 10px;
+  color: #ff9900;
 }/*# sourceMappingURL=Body.css.map */
