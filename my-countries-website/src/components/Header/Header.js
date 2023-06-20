@@ -1,7 +1,9 @@
 import image from './logo.png'
+import { headerTabs } from "../../constants/headerTabs";
+
 import './Header.css'
 
-export const Header = () => {
+export const Header = ({ setCurrentTab }) => {
     return (
         <div className='header-background'>
             <div className='header'>
@@ -10,10 +12,7 @@ export const Header = () => {
                         <img src={image}></img>
                     </div>
                     <div className='header-nav'>
-                        <div type='button'>Главная</div>
-                        <div type='button'>Страны</div>
-                        <div type='button'>О нас</div>
-                        <div type='button'>Контакты</div>
+                        {headerTabs && headerTabs.map(tab => <div key={tab[0]} onClick={() => setCurrentTab(tab[0])}>{tab[1]}</div>)}
                     </div>
                     <div className='header-name'>
                         <h2>Country Explorer</h2>

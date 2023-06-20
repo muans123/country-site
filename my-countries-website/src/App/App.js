@@ -1,11 +1,11 @@
-import { MainPage } from '../pages/MainPage';
+import { RestCountriesPage} from '../pages/RestCountriesPage';
 
 import './App.css';
 
 export function App() {
   return (
     <div className="App">
-      <MainPage></MainPage>
+      <RestCountriesPage></RestCountriesPage>
     </div>
   );
 }
