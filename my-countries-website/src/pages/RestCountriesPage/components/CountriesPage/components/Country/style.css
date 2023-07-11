@@ -1,6 +1,7 @@
 .country {
   width: 30%;
   border: 2px solid red;
+  color: #fff;
 }
 .country .country__flag {
   width: 90%;

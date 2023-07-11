@@ -5,5 +5,5 @@ export const categories = [
     ["North America", "Северная Америка"],
     ['South America', "Южная Америка"],
     ["Oceania", "Океания"],
-    ["Australia", "Австралия"]
+    ["All", "Все"]
 ]
