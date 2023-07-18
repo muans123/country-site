@@ -1,3 +1,6 @@
+import { parseObjectToString } from "../../../../../../utilities/parseObjectToString"
+import { parseArrayToString } from "../../../../../../utilities/parseArrayToString"
+
 import "./style.css"
 
 export const Country = ({ currentCountry }) => {
@@ -14,19 +17,19 @@ export const Country = ({ currentCountry }) => {
                 {/*Capital: {currentCountry?.capital?.length > 0 ? currentCountry?.capital[0] : "-"}*/}
             </div>
             <div className="country__area">
-                {currentCountry?.area?.official}
+                Area: {currentCountry?.area} <span>км²</span>
             </div>
             <div className="country__languages">
-                {currentCountry?.languages?.official}
+                Languages: {parseObjectToString(currentCountry?.languages)}
             </div>
             <div className="country__population">
-                {currentCountry?.population?.official}
+                Population: {currentCountry?.population} <span>человек</span>
             </div>
             <div className="country__subregion">
-                {currentCountry?.subregion?.official}
+                Subregion: {currentCountry?.subregion}
             </div>
             <div className="country__timezones">
-                {currentCountry?.timezones?.official}
+                Timezones: {parseArrayToString(currentCountry?.timezones)}
             </div>
         </div>
     )
