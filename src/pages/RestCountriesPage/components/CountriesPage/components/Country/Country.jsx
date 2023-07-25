@@ -10,29 +10,33 @@ export const Country = ({ currentCountryProps }) => {
     return (
         <div className="country">
             <div className="country__name">
-                {currentCountry?.name?.official}
+                <a href={`/${currentCountry?.cca3}`}>
+                    {currentCountry?.name?.official}
+                </a>
             </div>
             <div className="country__flag">
                 <img src={currentCountry?.flags?.png}></img>
             </div>
-            <div className="country__capital">
-                {currentCountry?.capital?.length > 0 && "Capital: " + currentCountry?.capital[0]}
-                {/*Capital: {currentCountry?.capital?.length > 0 ? currentCountry?.capital[0] : "-"}*/}
-            </div>
-            <div className="country__area">
-                Area: {currentCountry?.area} <span>км²</span>
-            </div>
-            <div className="country__languages">
-                Languages: {currentCountry?.languages && parseObjectToString(currentCountry?.languages)}
-            </div>
-            <div className="country__population">
-                Population: {currentCountry?.population} <span>человек</span>
-            </div>
-            <div className="country__subregion">
-                Subregion: {currentCountry?.subregion}
-            </div>
-            <div className="country__timezones">
-                Timezones: {parseArrayToString(currentCountry?.timezones)}
+            <div className="current-country_main-info">
+                <div>
+                    {currentCountry?.capital?.length > 0 && "Capital: " + currentCountry?.capital[0]}
+                    {/*Capital: {currentCountry?.capital?.length > 0 ? currentCountry?.capital[0] : "-"}*/}
+                </div>
+                <div>
+                    Area: {currentCountry?.area} <span>км²</span>
+                </div>
+                <div >
+                    Languages: {currentCountry?.languages && parseObjectToString(currentCountry?.languages)}
+                </div>
+                <div >
+                    Population: {currentCountry?.population} <span>человек</span>
+                </div>
+                <div className="country__subregion">
+                    Subregion: {currentCountry?.subregion}
+                </div>
+                <div className="country__timezones">
+                    Timezones: {parseArrayToString(currentCountry?.timezones)}
+                </div>
             </div>
         </div>
     )

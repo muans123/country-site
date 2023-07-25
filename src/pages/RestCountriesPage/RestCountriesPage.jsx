@@ -1,12 +1,51 @@
-import { useEffect, useState } from "react"
+import { createContext, useEffect, useState } from "react"
 import { sendRequest } from "../../services/sendRequest"
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import { Header } from "../../components/Header";
 import { MainPage } from "./components/MainPage";
 import { CountriesPage } from "./components/CountriesPage";
+import { CategoriesPage } from "./components/CountriesPage/components/CategoriesPage";
+import { CountryList } from "./components/CountriesPage/components/CountryList"
+import { CurrentCountry } from "./components/CurrentCountry"
 
 import "./style.sass"
+
+export const RestCountriesContext = createContext([]);
+
+let router = createBrowserRouter([
+    {
+        path: "/",
+        element: <MainPage />
+    },
+
+    {
+        path: "/countries",
+        element: <CountriesPage />,
+        children: [
+            {
+                path: "categories",
+                element: <CategoriesPage />,
+            },
+            {
+                path: ":categoryParam",
+                element: <CountryList />,
+            }]
+    },
+    // {
+    //     path: "/AboutUs",
+    //     element: <AboutUs />
+    // },
+    // {
+    //     path: "/Contacts",
+    //     element: <Contacts />
+    // },
+    {
+
+        path: ":currentCountryParam",
+        element: <CurrentCountry />
+
+    }])
 
 export const RestCountriesPage = () => {
 
@@ -14,24 +53,15 @@ export const RestCountriesPage = () => {
 
     useEffect(() => sendRequest(setResponse), []);
 
-    let router = createBrowserRouter([
-        {
-            path: "/main",
-            element: <MainPage />
-        },
-
-        {
-            path: "/countries",
-            element: <CountriesPage countryList={response} />
-        }
-    ])
+    console.log(response)
 
     return (
         <>
             <Header />
 
-            <RouterProvider router={router} />
-
+            <RestCountriesContext.Provider value={response}>
+                <RouterProvider router={router} />
+            </RestCountriesContext.Provider>
         </>
     )
 }

@@ -1,6 +1,6 @@
 export const headerTabs = [
-    ["main", "Главная"],
-    ["countries", "Страны"],
+    ["", "Главная"],
+    ["countries/categories", "Страны"],
     ["about-us", "О нас"],
     ["contacts", "Контакты"]
 ];
