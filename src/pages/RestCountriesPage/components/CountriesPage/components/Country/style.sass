@@ -5,13 +5,19 @@
     color: #fff
     background-color: rgba(174, 31, 246, 0.307)
     backdrop-filter: blur(5px)
+    padding: 10px 0px
 
     .country__name
         text-align: center
+        font-size: 25px
 
         a
             all: unset
             cursor: pointer
+            transition: .25s
+
+            &:hover
+                color: red
 
     .country__flag
         width: 90%
