@@ -1,0 +1,47 @@
+.country {
+  margin-top: 15px;
+  width: 30%;
+  border: 2px solid white;
+  color: #fff;
+  background-color: rgba(66, 66, 66, 0.307);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  padding: 10px 0px;
+}
+.country .country__name {
+  text-align: center;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%;
+  color: #fff;
+  font-family: "Roboto";
+}
+.country .country__name a {
+  all: unset;
+  cursor: pointer;
+  transition: 0.25s;
+}
+.country .country__name a:hover {
+  color: #b2b2b2;
+}
+.country .country__flag {
+  width: 90%;
+  aspect-ratio: 5/3;
+  margin: 0 auto;
+}
+.country .country__flag img {
+  width: 100%;
+  height: 100%;
+}
+.country .current-country_main-info {
+  padding-left: 5%;
+}
+.country .current-country_main-info div {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 140%;
+  color: #fff;
+  font-family: "Roboto";
+}/*# sourceMappingURL=style.css.map */

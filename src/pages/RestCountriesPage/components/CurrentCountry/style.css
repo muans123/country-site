@@ -1,0 +1,26 @@
+.current-country {
+  width: 100%;
+  height: 89vh;
+  margin: 0 auto;
+  color: white;
+  text-align: center;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 140%;
+  color: #fff;
+}
+.current-country .sides {
+  display: flex;
+  width: 100%;
+  height: 90%;
+  justify-content: space-between;
+}
+.current-country .sides .left-side {
+  width: 48%;
+  background-color: red;
+}
+.current-country .sides .right-side {
+  width: 48%;
+  background-color: green;
+}/*# sourceMappingURL=style.css.map */
