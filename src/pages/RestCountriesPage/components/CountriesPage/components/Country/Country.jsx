@@ -10,7 +10,7 @@ export const Country = ({ currentCountryProps }) => {
     return (
         <div className="country">
             <div className="country__name">
-                <a href={`/${currentCountry?.cca3}`}>
+                <a href={`/country-site/${currentCountry?.cca3}`}>
                     {currentCountry?.name?.official}
                 </a>
             </div>
