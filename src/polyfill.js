@@ -1,1 +1,0 @@
-entry: [ './src/polyfill.js']
