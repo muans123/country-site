@@ -1,29 +1,39 @@
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import { useParams } from "react-router"
 import { RestCountriesContext } from "../../../../RestCountriesPage"
 
+import { setRightSearchResult } from "../../../../../../utilities/setRightSearchResult"
+
 import { Country } from "../Country"
+import { Search } from "./components/Search"
 
 import "./style.sass"
+
 
 
 export const CountryList = () => {
 
     let { categoryParam } = useParams();
-
-    console.log("catParam " + categoryParam)
-
+    const [searchResult, setSearchResult] = useState("");
     let countryList = useContext(RestCountriesContext)
+
+    console.log(countryList)
 
     if (categoryParam !== "All") {
         countryList = countryList?.filter(country => country?.params?.continents[0] === categoryParam)
     }
 
+    let resultCountryList = setRightSearchResult(countryList, searchResult)
+
     return (
-        <div className="country-list">
-            {countryList && countryList?.map(
-                country => <Country currentCountryProps={country} />
-            )}
+        <div className="country-list__element">
+            <Search searchResult={searchResult} setSearchResult={setSearchResult} />
+            <div className="country-list">
+
+                {resultCountryList && resultCountryList?.map(
+                    country => <Country currentCountryProps={country} />
+                )}
+            </div>
         </div>
     )
 }
