@@ -16,11 +16,12 @@ export const setRightSearchResult = (countryList, searchResult) => {
         (country) => {
             if (country?.params?.capital) {
                 if (country.params.capital[0].toLowerCase()?.startsWith(searchResult?.toLowerCase())) return true
+                return false
             }
             else return false
 
         }
     )
 
-    return [... new Set([...countryListStartsWith, ...countryListCapitalStartsWith, ...countryListIcludes])];
+    return [...new Set([...countryListStartsWith, ...countryListCapitalStartsWith, ...countryListIcludes])];
 }

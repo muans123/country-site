@@ -1,18 +1,24 @@
-export function parseObjectToString(objectToParse){
+export function parseObjectToString(objectToParse) {
 
-    let arrayToParse = Object.values(objectToParse);
-    let resultString = "";
+    if (objectToParse) {
 
-    for (let i = 0 ; i<arrayToParse.length; i++){
-        resultString+= arrayToParse[i];
+        let arrayToParse = Object.values(objectToParse);
+        let resultString = "";
 
-        if(i===arrayToParse.length-1){
-            resultString+= "."
+        for (let i = 0; i < arrayToParse.length; i++) {
+            resultString += arrayToParse[i];
+
+            if (i === arrayToParse.length - 1) {
+                resultString += "."
+            }
+            else {
+                resultString += ", "
+            }
         }
-        else{
-            resultString+= ", "
-        }
-    } 
 
-    return resultString
+        return resultString
+    }
+    else {
+        return "-"
+    }
 }

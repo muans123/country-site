@@ -1,9 +1,13 @@
+import { useContext } from "react"
+import { useParams } from "react-router"
+
 import { parseCurrenciesToString } from "../../../../utilities/parseCurrenciesToString"
 import { parseArrayToString } from "../../../../utilities/parseArrayToString"
 import { parseObjectToString } from "../../../../utilities/parseObjectToString"
-import { useContext } from "react"
-import { useParams } from "react-router"
+import { parseBordersToString } from "../../../../utilities/parseBordersToString"
 import { RestCountriesContext } from "../../RestCountriesPage"
+import { GoogleMapCustom } from "../../../../components/GoogleMap"
+import { setZoomScale } from "../../../../utilities/setZoomScale"
 
 import './style.sass'
 
@@ -35,7 +39,7 @@ export const CurrentCountry = () => {
                             Capital: <span>{currentCountry?.capital?.length > 0 && currentCountry?.capital[0]}</span>
                         </div>
                         <div>
-                            Languages: <span>{currentCountry?.languages && parseObjectToString(currentCountry?.languages)}</span>
+                            Languages: <span>{ parseObjectToString(currentCountry?.languages)}</span>
                         </div>
                         <div>
                             Population: <span>{currentCountry?.population} человек</span>
@@ -44,7 +48,7 @@ export const CurrentCountry = () => {
                             Area: <span>{currentCountry?.area} км² </span>
                         </div>
                         <div>
-                            Borders : <span>{currentCountry?.borders && parseArrayToString(currentCountry?.borders)}</span>
+                            Borders : <span>{parseBordersToString(currentCountry?.borders, countryList)}</span>
                         </div>
                         <div>
                             Continents : <span>{currentCountry?.continents}</span>
@@ -56,7 +60,7 @@ export const CurrentCountry = () => {
                             Car-side : <span>{currentCountry?.car.side}</span>
                         </div>
                         <div>
-                            Currencies : <span>{currentCountry?.currencies && parseCurrenciesToString(currentCountry?.currencies)}</span>
+                            Currencies : <span>{parseCurrenciesToString(currentCountry?.currencies)}</span>
                         </div>
                         <div>
                             Timezones: <span>{parseArrayToString(currentCountry?.timezones)}</span>
@@ -80,7 +84,7 @@ export const CurrentCountry = () => {
                     </div>
                 </div>
                 <div className="right-side">
-
+                    <GoogleMapCustom currentCenter={currentCountry?.latlng} currentZoom={setZoomScale(currentCountry?.area)} />
                 </div>
             </div>
         </div>

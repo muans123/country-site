@@ -1,18 +1,23 @@
-export function parseCurrenciesToString(objectToParse){
+export function parseCurrenciesToString(objectToParse) {
+    if (objectToParse) {
 
-    let arrayToParse = Object.values(objectToParse);
-    let resultString = "";
+        let arrayToParse = Object.values(objectToParse);
+        let resultString = "";
 
-    for (let i = 0 ; i<arrayToParse.length; i++){
-        resultString+= arrayToParse[i].name+" ("+arrayToParse[i].symbol+")";
+        for (let i = 0; i < arrayToParse.length; i++) {
+            resultString += arrayToParse[i].name + " (" + arrayToParse[i].symbol + ")";
 
-        if(i===arrayToParse.length-1){
-            resultString+= "."
+            if (i === arrayToParse.length - 1) {
+                resultString += "."
+            }
+            else {
+                resultString += ", "
+            }
         }
-        else{
-            resultString+= ", "
-        }
-    } 
 
-    return resultString
+        return resultString
+    }
+    else {
+        return "-"
+    }
 }
