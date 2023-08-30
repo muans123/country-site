@@ -32,49 +32,49 @@ export const CurrentCountry = () => {
                     </div>
                     <div className="country__info">
                         <div>
-                            {currentCountry?.capital?.length > 0 && "Capital: " + currentCountry?.capital[0]}
+                            Capital: <span>{currentCountry?.capital?.length > 0 && currentCountry?.capital[0]}</span>
                         </div>
                         <div>
-                            Languages: {currentCountry?.languages && parseObjectToString(currentCountry?.languages)}
+                            Languages: <span>{currentCountry?.languages && parseObjectToString(currentCountry?.languages)}</span>
                         </div>
                         <div>
-                            Population: {currentCountry?.population} <span>человек</span>
+                            Population: <span>{currentCountry?.population} человек</span>
                         </div>
                         <div>
-                            Area: {currentCountry?.area} <span>км²</span>
+                            Area: <span>{currentCountry?.area} км² </span>
                         </div>
                         <div>
-                            Borders : {currentCountry?.borders && parseArrayToString(currentCountry?.borders)}
+                            Borders : <span>{currentCountry?.borders && parseArrayToString(currentCountry?.borders)}</span>
                         </div>
                         <div>
-                            Continents : {currentCountry?.continents}
+                            Continents : <span>{currentCountry?.continents}</span>
                         </div>
                         <div>
-                            Subregion: {currentCountry?.subregion}
+                            Subregion: <span>{currentCountry?.subregion}</span>
                         </div>
                         <div>
-                            Car-side : {currentCountry?.car.side}
+                            Car-side : <span>{currentCountry?.car.side}</span>
                         </div>
                         <div>
-                            Currencies : {currentCountry?.currencies && parseCurrenciesToString(currentCountry?.currencies)}
+                            Currencies : <span>{currentCountry?.currencies && parseCurrenciesToString(currentCountry?.currencies)}</span>
                         </div>
                         <div>
-                            Timezones: {parseArrayToString(currentCountry?.timezones)}
+                            Timezones: <span>{parseArrayToString(currentCountry?.timezones)}</span>
                         </div>
                         <div>
-                            Start of week : {currentCountry?.startOfWeek}
+                            Start of week : <span>{currentCountry?.startOfWeek}</span>
                         </div>
                         <div>
-                            Status : {currentCountry?.status}
+                            Status : <span>{currentCountry?.status}</span>
                         </div>
                         <div>
-                            Independence : {currentCountry?.independent ? "independent" : "dependent"}
+                            Independence : <span>{currentCountry?.independent ? "independent" : "dependent"}</span>
                         </div>
                         <div>
-                            Landlocked : {currentCountry?.landlocked ? "Don`t have " : "have "} sea outlet
+                            Landlocked : <span>{currentCountry?.landlocked ? "Don`t have " : "have "} sea outlet</span>
                         </div>
                         <div>
-                            UN member : {currentCountry?.unMember ? "Yes" : "No"}
+                            UN member : <span>{currentCountry?.unMember ? "Yes" : "No"}</span>
                         </div>
 
                     </div>
