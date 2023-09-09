@@ -1,6 +1,8 @@
+import {Routes} from "../constants/Routes"
+
 export const headerTabs = [
-    ["country-site", "Главная"],
-    ["country-site/countries/categories", "Страны"],
-    ["country-site/about-us", "О нас"],
-    ["country-site/contacts", "Контакты"]
+    [Routes.Home, "Главная"],
+    [Routes.Countries.Categories, "Страны"],
+    [Routes.AboutUs, "О нас"],
+    [Routes.Contacts, "Контакты"]
 ];

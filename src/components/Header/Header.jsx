@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import image from './logo.png'
 import { headerTabs } from "../../constants/headerTabs";
 
@@ -12,7 +14,16 @@ export const Header = () => {
                         <img src={image}></img>
                     </div>
                     <div className='header-nav'>
-                        {headerTabs && headerTabs.map(tab => <div key={tab[0]}><a href={`/${tab[0]}`}>{tab[1]}</a></div>)}
+                        {
+                            headerTabs && headerTabs.map(
+                                tab =>
+                                    <div key={tab[0]}>
+                                        <Link to={`${tab[0]}`}>
+                                            {tab[1]}
+                                        </Link>
+                                    </div>
+                            )
+                        }
                     </div>
                     <div className='header-name'>
                         <h2>Country Explorer</h2>

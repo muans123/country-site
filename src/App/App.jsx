@@ -10,7 +10,7 @@ import { RestCountriesPage } from '../pages/RestCountriesPage';
 import './App.sass';
 
 let router = createBrowserRouter([{
-  path: "/country-site",
+  path: "country-site/",
   element: <RestCountriesPage />,
   children:
     [
@@ -33,11 +33,11 @@ let router = createBrowserRouter([{
           }]
       },
       // {
-      //     path: "AboutUs",
+      //     path: "about_us",
       //     element: <AboutUs />
       // },
       // {
-      //     path: "Contacts",
+      //     path: "contacts",
       //     element: <Contacts />
       // },
       {

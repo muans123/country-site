@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom"
+import { Routes } from "../../../../../../constants/Routes"
+
 import { parseObjectToString } from "../../../../../../utilities/parseObjectToString"
 import { parseArrayToString } from "../../../../../../utilities/parseArrayToString"
 
@@ -10,9 +13,9 @@ export const Country = ({ currentCountryProps }) => {
     return (
         <div className="country">
             <div className="country__name">
-                <a href={`/country-site/${currentCountry?.cca3}`}>
+                <Link to={Routes.CurrentCountry(currentCountry?.cca3)}>
                     {currentCountry?.name?.official}
-                </a>
+                </Link>
             </div>
             <div className="country__flag">
                 <img src={currentCountry?.flags?.png}></img>
