@@ -1,0 +1,39 @@
+@media (min-width: 1200px)
+    .drop-menu
+        display: none
+
+@media (max-width:1199px)
+    .drop-menu
+        z-index: 3
+        position: fixed
+        display: block
+        color: white
+
+        .drop-menu__switcher
+            top: 15px
+            left: 15px
+            z-index: 5
+            position: absolute
+
+        .drop-menu__menu
+            z-index: 4
+            position: absolute
+            top: 0
+            left: 0
+            padding-top: 10vh
+            height: 100vh
+            width: 35vw
+            background-color: rgba(215, 59, 93, 0.491)
+            backdrop-filter: blur(10px)
+            transition: .35s
+
+            .drop-menu__menu-item
+                width: 100%
+                margin-bottom: 5vh
+                background-color: black
+                font-size: 30px
+                text-align: center
+
+                a
+                    text-decoration: none
+                    color: white

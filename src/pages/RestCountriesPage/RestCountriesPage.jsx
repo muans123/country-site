@@ -17,12 +17,12 @@ export const RestCountriesPage = () => {
     console.log(response)
 
     return (
-        <>
+        <div className="rest-countries-page">
             <Header />
 
             <RestCountriesContext.Provider value={response}>
                 <Outlet />
             </RestCountriesContext.Provider>
-        </>
+        </div>
     )
 }
