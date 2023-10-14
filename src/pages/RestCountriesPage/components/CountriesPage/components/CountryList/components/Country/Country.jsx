@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom"
-import { Routes } from "../../../../../../constants/Routes"
+import { Routes } from "../../../../../../../../constants/Routes"
 
-import { parseObjectToString } from "../../../../../../utilities/parseObjectToString"
-import { parseArrayToString } from "../../../../../../utilities/parseArrayToString"
+import { parseObjectToString } from "../../../../../../../../utilities/parseObjectToString"
+import { parseArrayToString } from "../../../../../../../../utilities/parseArrayToString"
 
 import "./style.sass"
 

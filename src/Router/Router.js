@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { Navigate, createBrowserRouter } from "react-router-dom";
 
 import { MainPage } from "../pages/RestCountriesPage/components/MainPage";
 import { CountriesPage } from "../pages/RestCountriesPage/components/CountriesPage";
@@ -6,8 +6,15 @@ import { CategoriesPage } from "../pages/RestCountriesPage/components/CountriesP
 import { CountryList } from "../pages/RestCountriesPage/components/CountriesPage/components/CountryList"
 import { CurrentCountry } from "../pages/RestCountriesPage/components/CurrentCountry"
 import { RestCountriesPage } from '../pages/RestCountriesPage';
+import { AboutUs } from "../pages/RestCountriesPage/components/AboutUs"
 
-export const router = createBrowserRouter([{
+export const router = createBrowserRouter([
+  {
+    path: "",
+    element: <Navigate to={"./country-site/"} />
+  }
+  ,
+  {
     path: "country-site/",
     element: <RestCountriesPage />,
     children:
@@ -16,7 +23,7 @@ export const router = createBrowserRouter([{
           path: "",
           element: <MainPage />
         },
-  
+
         {
           path: "countries",
           element: <CountriesPage />,
@@ -28,21 +35,16 @@ export const router = createBrowserRouter([{
             {
               path: ":categoryParam",
               element: <CountryList />,
-            }]
+            }
+          ]
         },
-        // {
-        //     path: "about_us",
-        //     element: <AboutUs />
-        // },
-        // {
-        //     path: "contacts",
-        //     element: <Contacts />
-        // },
         {
-  
+          path: "about_us",
+          element: <AboutUs />
+        },
+        {
           path: ":currentCountryParam",
           element: <CurrentCountry />
-  
         }
       ]
   }])

@@ -4,7 +4,7 @@ import { RestCountriesContext } from "../../../../RestCountriesPage"
 
 import { setRightSearchResult } from "../../../../../../utilities/setRightSearchResult"
 
-import { Country } from "../Country"
+import { Country } from "./components/Country"
 import { Search } from "./components/Search"
 
 import "./style.sass"

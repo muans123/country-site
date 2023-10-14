@@ -3,6 +3,7 @@ import { sendRequest } from "../../services/sendRequest"
 import { Outlet } from "react-router-dom";
 
 import { Header } from "../../components/Header";
+import { Footer } from "../../components/Footer";
 
 import "./style.sass"
 
@@ -23,6 +24,8 @@ export const RestCountriesPage = () => {
             <RestCountriesContext.Provider value={response}>
                 <Outlet />
             </RestCountriesContext.Provider>
+
+            <Footer />
         </div>
     )
 }
