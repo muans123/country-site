@@ -31,7 +31,7 @@ export const CountryList = () => {
             <div className="country-list">
 
                 {resultCountryList && resultCountryList?.map(
-                    country => <Country currentCountryProps={country} />
+                    country => <Country key={country.id} currentCountryProps={country} />
                 )}
             </div>
         </div>
